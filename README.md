@@ -1,42 +1,43 @@
-# sv
+## Search and Discovery 
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is a simple full stack app that simulates the retrieval of, and display of Product Data.
+It aims to simulate a SvelteKit frontend querying and consuming data from a Node.js Express backend.
 
-## Creating a project
+### Running the project
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
+1. Install dependencies with `pnpm install`
+2. Start the express server (separate terminal):
 
 ```sh
-# recreate this project
-pnpm dlx sv@0.17.0 create --template minimal --types ts --add prettier eslint vitest="usages:unit" tailwindcss="plugins:forms" --install pnpm .
+
+# Express default port 3000
+pnpm run server
 ```
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+3. Keep the API running, then start the dev server in a new terminal session:
 
 ```sh
-npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# Svelte default port 5173
+pnpm run dev
+
 ```
 
-## Building
+### Other scripts
 
-To create a production version of your app:
+1. Create a build for this project:
 
 ```sh
-npm run build
+pnpm run build
 ```
 
-You can preview the production build with `npm run preview`.
+2. Run tests for this project:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```sh
+# Run tests in general (just unit at this stage)
+pnpm run test 
+
+# Run unit tests
+pnpm run test:unit
+```
