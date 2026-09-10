@@ -14,6 +14,7 @@ Layered architecture on the backend — separation of concerns, unit-testable.
 
 - Routes → Controllers → Services → Repositories
 - Providers (e.g. enrichment) sit beside services as dependencies, not as HTTP peers
+- Layered structure adapted from article, AI assisted converting examples from CommonJS to ESM/TS
 
 #### Decisions
 
