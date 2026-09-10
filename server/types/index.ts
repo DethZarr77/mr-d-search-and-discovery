@@ -29,7 +29,7 @@ type EnrichmentStatus = {
 
 // Response object for catalog endpoint
 type CatalogResponse = {
-    enrichment: EnrichmentStatus,
+    enrichment: EnrichmentStatus | null,
     items: MergedCatalogItem[],
 }
 
