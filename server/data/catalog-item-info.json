@@ -1,0 +1,30 @@
+[
+	{
+		"id": "1",
+		"availability": "In Stock",
+		"price": 100.0,
+		"popularity": 80.0,
+		"delivery_estimate": "1-5 days"
+	},
+	{
+		"id": "2",
+		"availability": "In Stock",
+		"price": 100.0,
+		"popularity": 80.0,
+		"delivery_estimate": "2-3 days"
+	},
+	{
+		"id": "3",
+		"availability": "Out of Stock",
+		"price": 300.0,
+		"popularity": 90.0,
+		"delivery_estimate": "2-3 days"
+	},
+	{
+		"id": "4",
+		"availability": "In Stock",
+		"price": 85.0,
+		"popularity": 50.0,
+		"delivery_estimate": "1-4 days"
+	}
+]
