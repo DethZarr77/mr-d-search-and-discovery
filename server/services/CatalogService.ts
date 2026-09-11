@@ -1,9 +1,15 @@
 import { IEnrichmentProvider } from '../providers/EnrichmentProvider';
 import { CatalogRepository } from '../repositories/CatalogRepository';
-import type { CatalogItem, CatalogResponse } from '../types';
+import type {
+	CatalogFilter,
+	CatalogItem,
+	CatalogRequestQueryParams,
+	CatalogResponse,
+	MergedCatalogItem
+} from '../types';
 
 export type ICatalogService = {
-	listCatalogItems: () => Promise<CatalogResponse>;
+	listCatalogItems: (params: CatalogRequestQueryParams) => Promise<CatalogResponse>;
 };
 
 export class CatalogService implements ICatalogService {
@@ -15,47 +21,40 @@ export class CatalogService implements ICatalogService {
 		this.enrichmentProvider = enrichmentProvider;
 	}
 
-	async listCatalogItems() {
-		// fetch catalog items
+	async listCatalogItems(params: CatalogRequestQueryParams) {
 		const records: CatalogItem[] = await this.catalogRepository.findAll();
+		const matchedItems = this.searchAndFilter(records, params);
 
 		const catalogResponse: CatalogResponse = {
-			items: [],
+			items: matchedItems.map((record) => ({
+				...record,
+				extra_info: null
+			})),
 			enrichment: null
 		};
 
-		// const ids: Set<string> = new Set();
-		const ids: string[] = [];
+		const ids = matchedItems.map((record) => record.id);
 
 		try {
-			records.forEach((record) => {
-				// Add id to array (use `Set` here if duplicates are an issue)
-				ids.push(record.id);
-
-				// Add record to merged records
-				catalogResponse.items.push({
-					...record,
-					extra_info: null
-				});
-			});
-
-			// fetch enrichment data using id's from `records`
 			const enrichmentData = await this.enrichmentProvider.getEnrichmentData(ids);
 
-			// Add enrichment data to each record
 			catalogResponse.items.forEach((record) => {
 				record.extra_info = enrichmentData.get(record.id) ?? null;
 			});
 
-			// Set enrichment status to success
 			catalogResponse.enrichment = {
 				message: 'Got enrichment data',
 				status: 'success'
 			};
+
+			catalogResponse.items = this.sortItems(
+				catalogResponse.items,
+				params.sort_by,
+				params.sort_order
+			);
 		} catch (error) {
 			console.error(error);
 			console.log('Network died');
-			// Set enrichment status to failed
 			catalogResponse.enrichment = {
 				message: 'Network died',
 				status: 'failed'
@@ -63,5 +62,66 @@ export class CatalogService implements ICatalogService {
 		}
 
 		return catalogResponse;
+	}
+
+	private searchAndFilter(items: CatalogItem[], params: CatalogRequestQueryParams): CatalogItem[] {
+		return items.filter(
+			(item) =>
+				this.matchesSearch(item, params.search_query) && this.matchesFilter(item, params.filter)
+		);
+	}
+
+	// Search query `includes` check for name or category
+	private matchesSearch(item: CatalogItem, searchQuery: string | null): boolean {
+		if (!searchQuery) {
+			return true;
+		}
+
+		const query = searchQuery.toLowerCase();
+
+		return item.name.toLowerCase().includes(query) || item.category.toLowerCase().includes(query);
+	}
+
+	// Filter check for category
+	private matchesFilter(item: CatalogItem, filter: CatalogFilter | null): boolean {
+		if (!filter) {
+			return true;
+		}
+
+		if (filter.filter_by === 'category') {
+			return item.category.toLowerCase() === filter.filter_value.toLowerCase();
+		}
+
+		return true;
+	}
+
+	// Bubble sort by popularity or price
+	private sortItems(
+		items: MergedCatalogItem[],
+		sortBy: 'popularity' | 'price',
+		sortOrder: 'asc' | 'desc' | null
+	): MergedCatalogItem[] {
+		// If no sort order is provided, default to `desc`
+		const direction = sortOrder ?? 'desc';
+
+		// If sort order is `asc`, multiply by 1, otherwise multiply by -1
+		const multiplier = direction === 'asc' ? 1 : -1;
+
+		return [...items].sort((a, b) => {
+			const aValue = a.extra_info?.[sortBy];
+			const bValue = b.extra_info?.[sortBy];
+
+			if (aValue == null && bValue == null) {
+				return 0;
+			}
+			if (aValue == null) {
+				return 1;
+			}
+			if (bValue == null) {
+				return -1;
+			}
+
+			return (aValue - bValue) * multiplier;
+		});
 	}
 }
