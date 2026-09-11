@@ -1,6 +1,6 @@
 #### System Diagram
 
-[System diagram v1.1](./docs/diagrams/System%20diagram%20v1.1.png)
+[System diagram v1.2](./docs/diagrams/System%20diagram%20v1.2.png)
 
 ---
 
