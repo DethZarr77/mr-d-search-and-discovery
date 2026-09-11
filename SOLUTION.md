@@ -8,13 +8,15 @@
 
 #### Architecture
 
-Layered architecture on the backend — separation of concerns, unit-testable. 
+Layered architecture on the backend — separation of concerns, unit-testable.
 
 [layered-architecture-in-nodejs-and-express](https://codearchitecture.in/stories/layered-architecture-in-nodejs-and-express-class-based-design-dependency-injection-and-best-practices)
 
 - Routes → Controllers → Services → Repositories
 - Providers (e.g. enrichment) sit beside services as dependencies, not as HTTP peers
 - Layered structure adapted from article, AI assisted converting examples from CommonJS to ESM/TS
+- `CatalogContainer` wires repo + enrichment provider into the service
+- Enrichment simulation: 1-4s delay, failure 1/3 times, graceful failure (enrichmentStatus + root `extra_info: null`)
 
 #### Decisions
 
