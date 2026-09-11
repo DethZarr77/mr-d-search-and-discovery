@@ -41,7 +41,7 @@ type CatalogFilter = {
 
 // Query params for catalog endpoint
 type CatalogRequestQueryParams = {
-	filter: CatalogFilter;
+	filter: CatalogFilter | null;
 	search_query: string | null;
 	sort_by: 'popularity' | 'price';
 	sort_order: 'asc' | 'desc' | null;
