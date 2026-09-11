@@ -1,16 +1,282 @@
 [
 	{
-		"category": "Category 1",
-		"description": "Product 2 description",
+		"category": "Electronics",
+		"description": "Over-ear wireless headphones with 30-hour battery life and a foldable travel case.",
 		"id": "1",
 		"image": "https://via.placeholder.com/150",
-		"name": "Product 1"
+		"name": "Wireless Bluetooth Headphones"
 	},
 	{
-		"category": "Category 2",
+		"category": "Kitchen",
+		"description": "Double-wall insulated bottle that keeps drinks cold for 24 hours or hot for 12.",
 		"id": "2",
-		"name": "Product 2",
-		"description": "Product 2 description",
-		"image": "https://via.placeholder.com/150"
+		"image": "https://via.placeholder.com/150",
+		"name": "Stainless Steel Water Bottle"
+	},
+	{
+		"category": "Sports",
+		"description": "Non-slip 6mm yoga mat with alignment marks and a carry strap.",
+		"id": "3",
+		"image": "https://via.placeholder.com/150",
+		"name": "Yoga Mat"
+	},
+	{
+		"category": "Office",
+		"description": "Adjustable LED desk lamp with three brightness levels and a USB charging port.",
+		"id": "4",
+		"image": "https://via.placeholder.com/150",
+		"name": "Desk Lamp"
+	},
+	{
+		"category": "Kitchen",
+		"description": "Ceramic dripper set with a glass carafe for a clean, pour-over brew.",
+		"id": "5",
+		"image": "https://via.placeholder.com/150",
+		"name": "Pour-Over Coffee Maker"
+	},
+	{
+		"category": "Electronics",
+		"description": "In-ear buds with active noise cancelling and wireless charging case.",
+		"id": "6",
+		"image": "https://via.placeholder.com/150",
+		"name": "Noise-Cancelling Earbuds"
+	},
+	{
+		"category": "Sports",
+		"description": "Lightweight trail shoes with a grippy outsole for mixed terrain.",
+		"id": "7",
+		"image": "https://via.placeholder.com/150",
+		"name": "Trail Running Shoes"
+	},
+	{
+		"category": "Home",
+		"description": "Soft cotton throw for sofas and beds, machine washable.",
+		"id": "8",
+		"image": "https://via.placeholder.com/150",
+		"name": "Cotton Throw Blanket"
+	},
+	{
+		"category": "Electronics",
+		"description": "Tactile mechanical keyboard with hot-swappable switches and RGB backlight.",
+		"id": "9",
+		"image": "https://via.placeholder.com/150",
+		"name": "Mechanical Keyboard"
+	},
+	{
+		"category": "Kitchen",
+		"description": "Pre-seasoned 30cm skillet for stovetop searing and oven roasting.",
+		"id": "10",
+		"image": "https://via.placeholder.com/150",
+		"name": "Cast Iron Skillet"
+	},
+	{
+		"category": "Sports",
+		"description": "Set of five resistance bands with door anchor and handles for home workouts.",
+		"id": "11",
+		"image": "https://via.placeholder.com/150",
+		"name": "Resistance Band Set"
+	},
+	{
+		"category": "Home",
+		"description": "Ultrasonic diffuser with colour-changing light and auto shut-off.",
+		"id": "12",
+		"image": "https://via.placeholder.com/150",
+		"name": "Aromatherapy Diffuser"
+	},
+	{
+		"category": "Electronics",
+		"description": "20,000mAh power bank with dual USB-C ports and fast charging.",
+		"id": "13",
+		"image": "https://via.placeholder.com/150",
+		"name": "Portable Power Bank"
+	},
+	{
+		"category": "Kitchen",
+		"description": "Reversible bamboo board with juice groove and non-slip feet.",
+		"id": "14",
+		"image": "https://via.placeholder.com/150",
+		"name": "Bamboo Cutting Board"
+	},
+	{
+		"category": "Office",
+		"description": "A5 dotted hardcover notebook with 192 pages and an elastic closure.",
+		"id": "15",
+		"image": "https://via.placeholder.com/150",
+		"name": "Hardcover Notebook"
+	},
+	{
+		"category": "Home",
+		"description": "Matte ceramic planter with drainage hole and matching saucer.",
+		"id": "16",
+		"image": "https://via.placeholder.com/150",
+		"name": "Indoor Plant Pot"
+	},
+	{
+		"category": "Electronics",
+		"description": "Fitness smartwatch with heart-rate tracking, GPS, and a 7-day battery.",
+		"id": "17",
+		"image": "https://via.placeholder.com/150",
+		"name": "Smart Watch"
+	},
+	{
+		"category": "Kitchen",
+		"description": "20cm high-carbon steel chef's knife with a full-tang handle.",
+		"id": "18",
+		"image": "https://via.placeholder.com/150",
+		"name": "Chef's Knife"
+	},
+	{
+		"category": "Sports",
+		"description": "Firm foam roller for post-workout recovery and mobility work.",
+		"id": "19",
+		"image": "https://via.placeholder.com/150",
+		"name": "Foam Roller"
+	},
+	{
+		"category": "Home",
+		"description": "Pack of three soy wax candles in cedar, fig, and citrus scents.",
+		"id": "20",
+		"image": "https://via.placeholder.com/150",
+		"name": "Scented Candle Set"
+	},
+	{
+		"category": "Electronics",
+		"description": "7-in-1 USB-C hub with HDMI, SD card reader, and three USB-A ports.",
+		"id": "21",
+		"image": "https://via.placeholder.com/150",
+		"name": "USB-C Hub"
+	},
+	{
+		"category": "Kitchen",
+		"description": "Leak-proof insulated lunch box with two compartments and a utensil slot.",
+		"id": "22",
+		"image": "https://via.placeholder.com/150",
+		"name": "Insulated Lunch Box"
+	},
+	{
+		"category": "Outdoor",
+		"description": "32L hiking pack with a hydration sleeve and rain cover.",
+		"id": "23",
+		"image": "https://via.placeholder.com/150",
+		"name": "Hiking Backpack"
+	},
+	{
+		"category": "Office",
+		"description": "Ergonomic wireless mouse with silent clicks and a rechargeable battery.",
+		"id": "24",
+		"image": "https://via.placeholder.com/150",
+		"name": "Wireless Mouse"
+	},
+	{
+		"category": "Home",
+		"description": "Stonewashed linen cushion cover with hidden zip, 50x50cm.",
+		"id": "25",
+		"image": "https://via.placeholder.com/150",
+		"name": "Linen Cushion Cover"
+	},
+	{
+		"category": "Electronics",
+		"description": "Portable Bluetooth speaker with 12-hour playtime and IPX7 water resistance.",
+		"id": "26",
+		"image": "https://via.placeholder.com/150",
+		"name": "Bluetooth Speaker"
+	},
+	{
+		"category": "Kitchen",
+		"description": "Heavy-gauge non-stick baking sheet that fits a standard oven.",
+		"id": "27",
+		"image": "https://via.placeholder.com/150",
+		"name": "Non-Stick Baking Sheet"
+	},
+	{
+		"category": "Sports",
+		"description": "Weighted jump rope with adjustable length and ball-bearing handles.",
+		"id": "28",
+		"image": "https://via.placeholder.com/150",
+		"name": "Jump Rope"
+	},
+	{
+		"category": "Outdoor",
+		"description": "Rechargeable LED camping lantern with hanging hook and dimmer.",
+		"id": "29",
+		"image": "https://via.placeholder.com/150",
+		"name": "Camping Lantern"
+	},
+	{
+		"category": "Office",
+		"description": "Desktop stapler set with 1000 staples and a built-in remover.",
+		"id": "30",
+		"image": "https://via.placeholder.com/150",
+		"name": "Stapler Set"
+	},
+	{
+		"category": "Home",
+		"description": "Silent quartz wall clock with a matte wood frame, 30cm diameter.",
+		"id": "31",
+		"image": "https://via.placeholder.com/150",
+		"name": "Wall Clock"
+	},
+	{
+		"category": "Electronics",
+		"description": "1080p webcam with auto-focus, dual mics, and a privacy shutter.",
+		"id": "32",
+		"image": "https://via.placeholder.com/150",
+		"name": "Webcam"
+	},
+	{
+		"category": "Kitchen",
+		"description": "Set of four airtight glass jars with bamboo lids for pantry storage.",
+		"id": "33",
+		"image": "https://via.placeholder.com/150",
+		"name": "Glass Storage Jars"
+	},
+	{
+		"category": "Sports",
+		"description": "Pre-strung recreational tennis racket with a comfortable grip.",
+		"id": "34",
+		"image": "https://via.placeholder.com/150",
+		"name": "Tennis Racket"
+	},
+	{
+		"category": "Outdoor",
+		"description": "Three-season sleeping bag rated to 5°C with a compact stuff sack.",
+		"id": "35",
+		"image": "https://via.placeholder.com/150",
+		"name": "Sleeping Bag"
+	},
+	{
+		"category": "Office",
+		"description": "Bamboo desk organizer with slots for pens, notes, and devices.",
+		"id": "36",
+		"image": "https://via.placeholder.com/150",
+		"name": "Desk Organizer"
+	},
+	{
+		"category": "Home",
+		"description": "Set of three nested picture frames in oak finish, ready to hang.",
+		"id": "37",
+		"image": "https://via.placeholder.com/150",
+		"name": "Picture Frame Set"
+	},
+	{
+		"category": "Electronics",
+		"description": "Adjustable aluminium stand compatible with tablets and e-readers.",
+		"id": "38",
+		"image": "https://via.placeholder.com/150",
+		"name": "Tablet Stand"
+	},
+	{
+		"category": "Kitchen",
+		"description": "1.7L stainless steel kettle with boil-dry protection and a keep-warm setting.",
+		"id": "39",
+		"image": "https://via.placeholder.com/150",
+		"name": "Electric Kettle"
+	},
+	{
+		"category": "Sports",
+		"description": "Size 5 training soccer ball with a stitched PU cover.",
+		"id": "40",
+		"image": "https://via.placeholder.com/150",
+		"name": "Soccer Ball"
 	}
 ]

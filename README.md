@@ -1,4 +1,4 @@
-## Search and Discovery 
+## Search and Discovery
 
 This is a simple full stack app that simulates the retrieval of, and display of Product Data.
 It aims to simulate a SvelteKit frontend querying and consuming data from a Node.js Express backend.
@@ -13,7 +13,6 @@ It aims to simulate a SvelteKit frontend querying and consuming data from a Node
 # Express default port 3000
 pnpm run server
 ```
-
 
 3. Keep the API running, then start the dev server in a new terminal session:
 
@@ -36,7 +35,7 @@ pnpm run build
 
 ```sh
 # Run tests in general (just unit at this stage)
-pnpm run test 
+pnpm run test
 
 # Run unit tests
 pnpm run test:unit
