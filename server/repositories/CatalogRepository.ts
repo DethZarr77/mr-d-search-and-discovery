@@ -1,4 +1,4 @@
-import { CatalogItem } from '../types';
+import type { CatalogItem } from '../../shared/types';
 
 export class CatalogRepository {
 	constructor() {

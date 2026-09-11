@@ -1,6 +1,6 @@
 import type { Request, Response, NextFunction } from 'express';
 import { ICatalogService } from '../services/CatalogService';
-import type { CatalogFilter, CatalogRequestQueryParams } from '../types';
+import type { CatalogFilter, CatalogRequestQueryParams } from '../../shared/types';
 
 export class CatalogController {
 	private catalogService: ICatalogService;
