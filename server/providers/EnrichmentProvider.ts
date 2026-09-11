@@ -1,5 +1,5 @@
 import { promises } from 'fs';
-import { CatalogItemInfo } from '../types';
+import type { CatalogItemInfo } from '../../shared/types';
 
 /**
  * @returns Random delay in milliseconds between 1000 and 4000 (1 to 4 seconds)

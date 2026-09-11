@@ -1,3 +1,5 @@
+// Shared API contracts used by both Express and the Svelte client.
+
 // Single item
 type CatalogItem = {
 	category: string;

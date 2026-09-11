@@ -6,7 +6,7 @@ import type {
 	CatalogItemInfo,
 	CatalogRequestQueryParams,
 	MergedCatalogItem
-} from '../types';
+} from '../../shared/types';
 import { CatalogService } from './CatalogService';
 
 const ITEMS: CatalogItem[] = [
@@ -155,7 +155,7 @@ describe('CatalogService', () => {
 			expect(itemIds(result.items)).toEqual(['3']);
 			expect(result.items[0]?.extra_info).toBeNull();
 			expect(result.enrichment).toEqual({
-				message: 'Network died',
+				message: 'Failed to get extra data',
 				status: 'failed'
 			});
 

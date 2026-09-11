@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { NextFunction, Request, Response } from 'express';
 import type { ICatalogService } from '../services/CatalogService';
-import type { CatalogRequestQueryParams, CatalogResponse } from '../types';
+import type { CatalogRequestQueryParams, CatalogResponse } from '../../shared/types';
 import { CatalogController } from './CatalogController';
 
 const emptyResponse: CatalogResponse = {

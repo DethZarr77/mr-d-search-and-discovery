@@ -1,5 +1,5 @@
 import { promises } from 'fs';
-import type { CatalogItem } from '../types';
+import type { CatalogItem } from '../../shared/types';
 import { CatalogRepository } from './CatalogRepository';
 
 export class FileCatalogRepository extends CatalogRepository {
