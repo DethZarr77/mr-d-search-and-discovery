@@ -57,4 +57,5 @@ Layered architecture on the backend — separation of concerns, unit-testable.
 5. Filter is optional and not required on every request
 6. Category filter is 1:1, no partial string matching. In FE I would derive categories from the catalog, not from the filtered result list. Usually this would be a lookup table fetch (GET /categories)
 7. Shared API types live in `shared/types` so frontend and backend use one contract (moved while building the FE)
+8. Manula CORS middleware for the Vite origin so the browser can call Express on another port
 
