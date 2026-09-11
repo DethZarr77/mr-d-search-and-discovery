@@ -18,6 +18,7 @@ Layered architecture on the backend — separation of concerns, unit-testable.
 - `CatalogContainer` wires repo + enrichment provider into the service
 - Enrichment simulation: 1-4s delay, failure 1/3 times, graceful failure (enrichmentStatus + root `extra_info: null`)
 - Encountered a case sensitivity bug with queryParams. E.g. `sort_by=Price` defaulted to `popularity`. Added checks for if the param is a string, then lowercased it to match the searching/sorting checks
+- Asked AI to write specific backend tests to verify the 'core' functionality (search + filter before sort, graceful enrichment failure, default query parameter parsing )
 
 #### Decisions
 
