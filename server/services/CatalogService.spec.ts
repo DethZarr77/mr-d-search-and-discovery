@@ -162,6 +162,33 @@ describe('CatalogService', () => {
 			consoleError.mockRestore();
 			consoleLog.mockRestore();
 		});
+
+		it('falls back to sorting by name using the requested sort direction', async () => {
+			const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
+			const consoleLog = vi.spyOn(console, 'log').mockImplementation(() => {});
+			getEnrichmentData.mockRejectedValue(new Error('Request failed'));
+
+			const asc = await service.listCatalogItems(
+				params({
+					filter: { filter_by: 'category', filter_value: 'Sports' },
+					sort_order: 'asc'
+				})
+			);
+			expect(itemIds(asc.items)).toEqual(['5', '3']); // Trail Running Shoes, Yoga Mat
+
+			getEnrichmentData.mockRejectedValue(new Error('Request failed'));
+
+			const desc = await service.listCatalogItems(
+				params({
+					filter: { filter_by: 'category', filter_value: 'Sports' },
+					sort_order: 'desc'
+				})
+			);
+			expect(itemIds(desc.items)).toEqual(['3', '5']); // Yoga Mat, Trail Running Shoes
+
+			consoleError.mockRestore();
+			consoleLog.mockRestore();
+		});
 	});
 
 	describe('sort defaulting', () => {
