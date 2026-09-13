@@ -59,6 +59,8 @@ export class CatalogService implements ICatalogService {
 				message: 'Failed to get extra data',
 				status: 'failed'
 			};
+			// Live price/popularity unavailable — fall back to catalog name + requested direction
+			catalogResponse.items = this.sortItemsByName(catalogResponse.items, params.sort_order);
 		}
 
 		return catalogResponse;
@@ -95,7 +97,17 @@ export class CatalogService implements ICatalogService {
 		return true;
 	}
 
-	// Bubble sort by popularity or price
+	private sortItemsByName(
+		items: MergedCatalogItem[],
+		sortOrder: 'asc' | 'desc' | null
+	): MergedCatalogItem[] {
+		const direction = sortOrder ?? 'desc';
+		const multiplier = direction === 'asc' ? 1 : -1;
+
+		return [...items].sort((a, b) => a.name.localeCompare(b.name) * multiplier);
+	}
+
+	// Sort by enrichment fields (popularity or price)
 	private sortItems(
 		items: MergedCatalogItem[],
 		sortBy: 'popularity' | 'price',

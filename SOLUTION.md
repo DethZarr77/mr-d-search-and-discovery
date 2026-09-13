@@ -51,7 +51,7 @@ Layered architecture on the backend — separation of concerns, unit-testable.
 #### Decisions
 
 1. Searching & filtering done before the enrichment-provider call (CatalogItem filtering) so fewer results are enriched. Then after enrichment call, we sort (CatalogItemInfo field sort)
-2. Should enrichment fail, use fallback order for sorting, still return catalog items
+2. Should enrichment fail, still return catalog items and fall back to sorting by `name` using the requested `sort_order` (default `desc`)
 3. Searching done against `CatalogItem.name` and `CatalogItem.category`, partial strings accepted
 4. No search query / no filter = return all items.
 5. Filter is optional and not required on every request
