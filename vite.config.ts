@@ -19,6 +19,12 @@ export default defineConfig({
 			adapter: adapter()
 		})
 	],
+	server: {
+		proxy: {
+			// Forward same-origin /catalog calls to the Express API during `pnpm run dev`
+			'/catalog': 'http://localhost:3000'
+		}
+	},
 	test: {
 		expect: { requireAssertions: true },
 		projects: [

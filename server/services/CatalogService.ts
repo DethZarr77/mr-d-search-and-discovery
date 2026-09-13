@@ -6,7 +6,7 @@ import type {
 	CatalogRequestQueryParams,
 	CatalogResponse,
 	MergedCatalogItem
-} from '../types';
+} from '../../shared/types';
 
 export type ICatalogService = {
 	listCatalogItems: (params: CatalogRequestQueryParams) => Promise<CatalogResponse>;
@@ -43,7 +43,7 @@ export class CatalogService implements ICatalogService {
 			});
 
 			catalogResponse.enrichment = {
-				message: 'Got enrichment data',
+				message: 'Got extra data',
 				status: 'success'
 			};
 
@@ -56,7 +56,7 @@ export class CatalogService implements ICatalogService {
 			console.error(error);
 			console.log('Network died');
 			catalogResponse.enrichment = {
-				message: 'Network died',
+				message: 'Failed to get extra data',
 				status: 'failed'
 			};
 		}
