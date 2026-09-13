@@ -1,6 +1,6 @@
 #### System Diagram
 
-[System diagram v1.2](./docs/diagrams/System%20diagram%20v1.2.png)
+[System diagram v1.3](./docs/diagrams/System%20diagram%20v1.3.png)
 
 ---
 
@@ -21,9 +21,10 @@ SvelteKit + Tailwind — thin client over the catalog API, shared types from `sh
 #### Decisions / notes
 
 1. Explicit "Get Results" button rather than live search — keeps enrichment latency (1–4s) under user control
-2. URL sync for search params left as TODO (`SvelteURLSearchParams` stubbed); would make filters shareable / refresh-safe
-3. Shared contract via `shared/types` so FE types stay aligned with `CatalogResponse` / `MergedCatalogItem`
-
+2. Search submit syncs state to URL via goto.
+3. Refresh syncs URL to page state. No params = don't search, params = fetch items.
+4. Shared contract via `shared/types` so FE types stay aligned with `CatalogResponse` / `MergedCatalogItem`
+5. Loading skeleton, results empty state, hard fetch error banner.
 ---
 
 
@@ -57,5 +58,5 @@ Layered architecture on the backend — separation of concerns, unit-testable.
 5. Filter is optional and not required on every request
 6. Category filter is 1:1, no partial string matching. In FE I would derive categories from the catalog, not from the filtered result list. Usually this would be a lookup table fetch (GET /categories)
 7. Shared API types live in `shared/types` so frontend and backend use one contract (moved while building the FE)
-8. Manula CORS middleware for the Vite origin so the browser can call Express on another port
+8. Manual CORS middleware for the Vite origin so the browser can call Express on another port
 
