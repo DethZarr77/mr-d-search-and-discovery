@@ -31,14 +31,10 @@ pnpm run dev
 pnpm run build
 ```
 
-2. Run tests for this project:
+2. Run tests (Only backend at this stage) for this project:
 
 ```sh
-# Run tests in general (just unit at this stage)
 pnpm run test
-
-# Run unit tests
-pnpm run test:unit
 ```
 
 ### Catalog API request examples

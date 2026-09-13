@@ -13,10 +13,7 @@ SvelteKit + Tailwind — thin client over the catalog API, shared types from `sh
 - Search / category / sort controls → build query params → `GET /catalog` → render table
 - Runes (`$state`) for form state, loading, results, and enrichment status
 - Categories hardcoded for now (All + known set); ideally a `GET /categories` lookup as noted in backend decision 6
-- Enrichment status surfaced in the UI; `extra_info` nulls shown as `—` when enrichment fails
-- Sticky table header + scrollable results pane so controls stay put while browsing
-
-
+- Enrichment status surfaced in the UI (`StatusBanner`); Table `extra_info` nulls shown as `—` when enrichment fails
 
 #### Decisions / notes
 
@@ -24,7 +21,12 @@ SvelteKit + Tailwind — thin client over the catalog API, shared types from `sh
 2. Search submit syncs state to URL via goto.
 3. Refresh syncs URL to page state. No params = don't search, params = fetch items.
 4. Shared contract via `shared/types` so FE types stay aligned with `CatalogResponse` / `MergedCatalogItem`
-5. Loading skeleton, results empty state, hard fetch error banner.
+5. `CatalogResults` + `StatusBanner` + `LoadingSkeleton` as components
+6. URL `goto` with `replaceState`/`keepFocus`/`noScroll` so query sync doesn't spam history or jump scroll
+7. Sticky table header + scrollable results pane so controls stay put while browsing
+8. Responsive results pane - `min-w-o` + overflow ensures table scrolls inside middle row
+9. Radio values stay API strings, labels capitalized for display
+10. Client fetch via Vite proxy `/catalog` 
 ---
 
 
