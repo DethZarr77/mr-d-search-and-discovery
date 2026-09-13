@@ -59,3 +59,6 @@ URL: http://localhost:3000/catalog?filter_by=category&filter_value=Sports&sort_b
 
 GET Catalog Items — search + filter + sort:
 URL: http://localhost:3000/catalog?search_query=mat&filter_by=category&filter_value=Sports&sort_by=price&sort_order=asc
+
+AI usage, design tradeoffs, and transcripts: see [SOLUTION.md](./SOLUTION.md).
+

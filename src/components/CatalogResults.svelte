@@ -8,7 +8,7 @@
 	<LoadingSkeleton />
 {:else if results.length > 0}
 	<div class="h-full min-h-0 min-w-0 overflow-auto">
-		<table id="results" class="w-full min-w-[40rem] border-separate border-spacing-0">
+		<table id="results" class="w-full min-w-160 border-separate border-spacing-0">
 			<thead class="sticky top-0 z-10">
 				<tr>
 					<th class="border-b bg-gray-100 p-2 text-left">Name</th>
